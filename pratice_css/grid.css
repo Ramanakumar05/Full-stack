@@ -1,0 +1,27 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.grid
+{
+    /* refer https://www.freecodecamp.org/news/how-to-use-css-grid-layout/#:~:text=For%20example%2C%20when%20we%20have%20a%20complex%20design,we%20need%20a%20space%20or%20gap%20between%20elements. */
+    /* https://www.w3schools.com/css/css_grid.asp */
+
+    border: 1px solid black;
+    margin: 40px;
+    display: grid;
+    grid-template-columns: 50px auto 50px;
+    display:inline-table;
+    row-gap: 50px;
+    column-gap: 10px;
+    justify-content: center;
+}
+.item
+{
+    border: 2px solid black;
+    width: 10vw;
+    height: 10vh;
+    margin: 40px auto;
+    background-color: pink;
+}

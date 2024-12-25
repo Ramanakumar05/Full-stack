@@ -1,0 +1,54 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-size: 1.5rem;
+}
+section{
+    height: 100vh;
+}
+.blue
+{
+    background-color: blue;
+}
+.red
+{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+
+header,footer{
+    color: whitesmoke;
+    font-size: 5rem;
+    text-align: center;
+    height: 80px;
+    padding: 1rem;
+}
+header{
+    position: sticky;
+    top:0;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    font-size: 50px;
+    background-color: black;
+    width: 100%;
+}
+a{
+    padding: 25px;
+}
+.b1
+{
+    background-color: aquamarine;
+    /* button will not take the parent style */
+    /* we need to say */
+    font-size: inherit;
+    /* or define the style in body */
+    position: fixed;
+    top: 30%;
+    right: 0px;
+}

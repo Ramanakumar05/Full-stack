@@ -1,0 +1,14 @@
+// First Part
+
+// i) Strong Typing 
+// ii) Types
+// iii) Inferred Typing
+// iv) Duck Typing
+// v) Arrays
+// vi) Enums
+// vii) Functions
+// viii) Optional Parameters
+// ix) Default Parameters
+
+// difference in Typescript -Strong Type -object oriented Feature -Compile Time errors
+

@@ -1,0 +1,12 @@
+{
+  "name": "basics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "1.39to2.20.27.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node 2.20.27to.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
