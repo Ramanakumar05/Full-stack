@@ -171,7 +171,27 @@ const verifyemail=async (req,res)=>
             return res.json({message:"failed"})
         }
 
-        if(user.verifyOtp)
+        if(user.verifyOtp===''|| user.verifyOtp!==otp)
+        {
+            return res.json({message:'invaild otp'})
+        }
+        // if the otp is vaild then check exprie
+        if(user.verifyOtpExpireAt<Date.now())
+        {
+            return res.json({success:false,message:'otp expried'})
+        }
+        // if not expried
+        user.isverified=true;
+        user.verifyOtp=''
+        user.verifyOtpExpireAt=0;
+
+        await user.save();
+        return res.json({success:"email verified successfully"})
+
+    }
+    catch(error)
+    {
+        res.json({message:error.message})
     }
 }
-module.exports={register,login,logout,sendverifyotp}
+module.exports={register,login,logout,sendverifyotp,verifyemail}
