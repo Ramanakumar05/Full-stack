@@ -1,4 +1,6 @@
+// manage the env datas(access)
 require("dotenv").config();
+
 const express=require("express")
 const mongoose=require("mongoose")
 const cookieParser=require('cookie-parser')
@@ -18,7 +20,7 @@ app.use(express.json())
 // Helps to manage the cookies
 app.use(cookieParser())
 // refer to the notion notes
-app.use(cors({credentials:true,origin:"http://localhost:3000/"}))
+app.use(cors({credentials:true}))
 app.use(helmet())
 
 

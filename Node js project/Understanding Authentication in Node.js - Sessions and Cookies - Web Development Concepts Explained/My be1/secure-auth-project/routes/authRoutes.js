@@ -6,7 +6,7 @@ const User=require('../models/User')
 
 const router=express.Router();
 
-const{verifyToken,isAdmin}=require('../middleware/authmiddleware');
+const{verifyToken, checkRole}=require('../middleware/authmiddleware');
 
 // register
 router.post('/register',async(req,res)=>
@@ -40,7 +40,6 @@ router.post('/login',async(req,res)=>
 {
     try{
         const{email,password}=req.body;
-
     // check if user exist
     const user=await User.findOne({email});
     if(!user)
@@ -68,6 +67,14 @@ router.post('/login',async(req,res)=>
         process.env.JWT_SECRET,
         {expiresIn:process.env.JWT_EXPIRES}
     )
+    req.body.jwt=token;
+    console.log(`req body from auth router
+                ${req.body}
+        `)
+    console.log(`From authreq
+                    Token
+                    ${token}
+                `)
 
     // adding the jwt in cookie
 
@@ -76,6 +83,7 @@ router.post('/login',async(req,res)=>
     //     secure: true, maxAge: 3600000
     // })
 
+    req.user=user.role;
     res.json({message:"Login successful with the token "+token})
     // console.log(req.cookies)
 
@@ -84,7 +92,7 @@ router.post('/login',async(req,res)=>
         res.status(500).json({message:"Server error"})
     }
 })
-router.get('logout',(req,res)=>
+router.get('/logout',(req,res)=>
 {
     res.clearCookie("token");
     res.json({message:"logout successfull"})
@@ -92,20 +100,21 @@ router.get('logout',(req,res)=>
 
 
 // only admin
-router.get('/admin',verifyToken,(req,res)=>
+router.get('/admin',verifyToken,checkRole(["admin"]),(req,res)=>
 {
     res.json({message:"wecome admin"})
 })
-// only admin and manager
 
-router.get('/manager',(req,res)=>
+// only admin and manager
+router.get('/manager',verifyToken,checkRole(["admin","manager"]),(req,res)=>
 {
     res.json({message:"wecome manager"})
 })
 
 // all users can access the route
-router.get('/user',(req,res)=>
+router.get('/user',verifyToken,checkRole(["admin","manager","user"]),(req,res)=>
 {
+    console.log(req);
     res.json({message:"wecome user"})
 })
 
