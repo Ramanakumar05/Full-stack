@@ -67,14 +67,7 @@ router.post('/login',async(req,res)=>
         process.env.JWT_SECRET,
         {expiresIn:process.env.JWT_EXPIRES}
     )
-    req.body.jwt=token;
-    console.log(`req body from auth router
-                ${req.body}
-        `)
-    console.log(`From authreq
-                    Token
-                    ${token}
-                `)
+    
 
     // adding the jwt in cookie
 
@@ -83,7 +76,7 @@ router.post('/login',async(req,res)=>
     //     secure: true, maxAge: 3600000
     // })
 
-    req.user=user.role;
+    // req.user=user.role;
     res.json({message:"Login successful with the token "+token})
     // console.log(req.cookies)
 
