@@ -71,11 +71,10 @@ router.post('/login',async(req,res)=>
 
     // adding the jwt in cookie
 
-    // res.cookie("Token",token,{
-    //     httpOnly:true, //prevents client side java script access. prevent xss attact 
-    //     secure: true, maxAge: 3600000
-    // })
-
+    res.cookie("token",token,{
+        httpOnly:true, //prevents client side java script access. prevent xss attact 
+        secure: true, maxAge: 3600000
+    })
     // req.user=user.role;
     res.json({message:"Login successful with the token "+token})
     // console.log(req.cookies)
@@ -87,7 +86,7 @@ router.post('/login',async(req,res)=>
 })
 router.get('/logout',(req,res)=>
 {
-    res.clearCookie("token");
+    res.clearCookie("token",{httpOnly:true,sameSite:"strict"});
     res.json({message:"logout successfull"})
 })
 
