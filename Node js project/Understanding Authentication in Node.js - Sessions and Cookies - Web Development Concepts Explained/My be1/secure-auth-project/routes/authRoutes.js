@@ -94,20 +94,20 @@ router.get('/logout',(req,res)=>
 // only admin
 router.get('/admin',verifyToken,checkRole(["admin"]),(req,res)=>
 {
-    res.json({message:"wecome admin"})
+    res.json({message:"welcome admin"})
 })
 
 // only admin and manager
 router.get('/manager',verifyToken,checkRole(["admin","manager"]),(req,res)=>
 {
-    res.json({message:"wecome manager"})
+    res.json({message:"welcome manager"})
 })
 
 // all users can access the route
 router.get('/user',verifyToken,checkRole(["admin","manager","user"]),(req,res)=>
 {
     console.log(req);
-    res.json({message:"wecome user"})
+    res.json({message:"welcome user"})
 })
 
 
