@@ -1,0 +1,57 @@
+h1{
+    color: red;
+}
+
+/* apply this style when in the print  */
+@media print{
+    h1{
+        color: blue;
+    }
+}
+/* when landscape */
+@media print and (orientation:landscape)
+{
+    h1
+    {
+        color: black;
+    }
+}
+
+/* real application */
+
+/* we control the view by using the width of the screen in this there are two types */
+
+/* max width */
+/* min width */
+
+/* --Maxwidth */
+/* max width apply styles for upto specific width here 0 - 600px */
+@media screen and (max-width:600px) {
+    h1{
+        color: aqua;
+    }
+}
+
+/* --Min width */
+/* from 600 to all the above */
+@media screen and (min-width:50px) {
+    h1{
+        color: black;
+        background-color: red;
+        width: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+@media screen and (min-width:500px) {
+    h1{
+        color:lightblue;
+        background-color: black;
+    }
+}
+@media screen and (min-width:1000px) {
+    h1{
+        color:peru;
+        background-color: blue;
+    }
+}

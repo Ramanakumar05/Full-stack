@@ -1,0 +1,21 @@
+button:hover{
+    color: red;
+}
+a:link{
+    color: aqua;
+}
+a:active{
+    color: blueviolet;
+}
+a:visited{
+    color: burlywood;
+}
+
+li:nth-child(1){
+    color: red;
+}
+li:nth-child(even)
+{
+    background-color: bisque;
+    width: 50vh;
+}

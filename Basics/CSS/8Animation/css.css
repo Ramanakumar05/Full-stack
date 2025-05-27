@@ -1,0 +1,35 @@
+/* css.css */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+div {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    transition-property:transform;
+    transition-duration: 0.3s;
+    /* types of timing fuction */
+    /* ease in  */
+     /* ease in out */
+    /* linear */
+    /* ease default */
+    transition-timing-function: linear;
+    transition-delay: 0.1s;
+
+}
+
+.btn:hover{
+    /* move the button down px */
+    transform:translateY(-10px);
+    color: rgb(237, 11, 49);
+    font-size: large;
+    background-color: rgb(84, 229, 229);
+}

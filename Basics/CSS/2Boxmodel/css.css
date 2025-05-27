@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.box
+{
+    font-size: 2rem;
+    background-color: red;
+    width: 300px;
+    height: 300px;
+
+    /* padding-top: 32px;
+    padding-right: 32px;
+    padding-bottom: 32px;
+    padding-left: 32px; */
+
+    /* the fist value represent the top and bottom value and the second value represent the left and right value */
+    padding: 32px 64px;
+    
+
+
+    border: 5px solid black;
+
+
+    /* margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px; */
+
+    /* the fist value represent the top and bottom value and the second value represent the left and right value */
+    margin: 20px 20px;
+    box-sizing: border-box;
+
+}

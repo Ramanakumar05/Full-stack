@@ -1,0 +1,40 @@
+/* default poistion is static */
+/* refer - https://www.youtube.com/watch?v=jnfyH1k2c38 */
+
+.one{
+    background-color: red;
+    height: 100px;
+    width: 100px;
+    margin: 5px;
+    position: static;
+}
+
+.two{
+    background-color: black;
+    height: 100px;
+    width: 100px;
+    margin: 5px;
+    position: relative;
+    left: 50px;
+    top: 50px;
+    /* which element have highest priority */
+    z-index: 1;
+}
+.three{
+    background-color: yellow;
+    height: 100px;
+    width: 100px;
+    margin: 5px;
+    position: fixed;
+    z-index: 2;
+}
+.four{
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50);
+}

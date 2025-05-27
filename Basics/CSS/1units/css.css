@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#Div1{
+    color: black;
+    font-size: 10px;
+}
+
+#p{
+    /* size relative to the root element (html) */
+    /* the default size of the html is 16 hence 2rem then 2*16=32*/
+    font-size: 1.5rem;
+}
+#ram{
+    font-size: 40px;
+}
+
+#ram>p{
+    font-size: 2em;
+}
+/* em means "equal to the current font size", and 2em means 2 times the current font size. (For example in a 2em unit of measurement, if your font is 11px (11 pixels), then 2em equals 22 pixels.) */
+
+#Example_VH_VW{
+    background-color: palegreen;
+    font-size: 10px;
+    width: 20vw;
+    height: 10vh;
+    overflow:scroll;
+}
